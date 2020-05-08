@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>5.2.5.RELEASE</version>
+			<version>${org.springframework-version}</version>
 		</dependency>
 
 		<!-- DBCP -->
@@ -67,7 +67,6 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-
 
 		<!-- Logging -->
 		<dependency>

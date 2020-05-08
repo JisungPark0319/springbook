@@ -17,9 +17,9 @@ public class MemberDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	private final String MEMBER_SELECT_ID = "SELECT * FROM MEMBER WHERE MEMBERID = ?";
-	private final String MEMBER_SELECT_ID_PW = "SELECT * FROM MEMBER WHERE MEMBERID = ? AND PASSWORD = ?";
-	private final String MEMBER_INSERT = "INSERT INTO MEMBER VALUES(?,?,?,?)";
+	private static final String MEMBER_SELECT_ID = "SELECT * FROM MEMBER WHERE MEMBERID = ?";
+	private static final String MEMBER_SELECT_ID_PW = "SELECT * FROM MEMBER WHERE MEMBERID = ? AND PASSWORD = ?";
+	private static final String MEMBER_INSERT = "INSERT INTO MEMBER VALUES(?,?,?,?)";
 	
 	public MemberVO selectById(MemberVO memberVO) {
 		System.out.println("[MemberDAO] ===> selectById : " + memberVO.getMemberId());
