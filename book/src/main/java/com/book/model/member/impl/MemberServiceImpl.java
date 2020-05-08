@@ -25,5 +25,10 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO selectLogin(MemberVO memberVO) {
 		return memberDAO.selectLogin(memberVO);
 	}
+	
+	@Override
+	public void updatePassword(MemberVO memberVO) {
+		memberDAO.updatePassword(memberVO);
+	}
 
 }

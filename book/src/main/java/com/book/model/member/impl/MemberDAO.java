@@ -20,6 +20,7 @@ public class MemberDAO {
 	private static final String MEMBER_SELECT_ID = "SELECT * FROM MEMBER WHERE MEMBERID = ?";
 	private static final String MEMBER_SELECT_ID_PW = "SELECT * FROM MEMBER WHERE MEMBERID = ? AND PASSWORD = ?";
 	private static final String MEMBER_INSERT = "INSERT INTO MEMBER VALUES(?,?,?,?)";
+	private static final String MEMBER_UPDATE_PASSWORD = "UPDATE MEMBER SET PASSWORD = ? WHERE MEMBERID = ?";
 	
 	public MemberVO selectById(MemberVO memberVO) {
 		System.out.println("[MemberDAO] ===> selectById : " + memberVO.getMemberId());
@@ -47,6 +48,11 @@ public class MemberDAO {
 		
 		jdbcTemplate.update(MEMBER_INSERT, memberVO.getMemberId(), memberVO.getName(), 
 				memberVO.getPassword(), new Date());
+	}
+	
+	public void updatePassword(MemberVO memberVO) {
+		System.out.println("[MemberDAO] ===> updatePassword : " + memberVO);
+		jdbcTemplate.update(MEMBER_UPDATE_PASSWORD, memberVO.getPassword(), memberVO.getMemberId());
 	}
 }
 

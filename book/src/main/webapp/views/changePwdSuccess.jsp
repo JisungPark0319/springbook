@@ -6,5 +6,7 @@
 </head>
 <body>
 암호를 변경했습니다.
+<br>
+<a href="index.jsp">로그인</a>
 </body>
 </html>

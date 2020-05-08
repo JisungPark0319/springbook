@@ -7,4 +7,6 @@ public interface MemberService {
 	void insertMember(MemberVO memberVO);
 	
 	MemberVO selectLogin(MemberVO memberVO);
+	
+	void updatePassword(MemberVO memberVO);
 }
