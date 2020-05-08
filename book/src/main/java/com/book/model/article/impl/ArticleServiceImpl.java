@@ -47,4 +47,9 @@ public class ArticleServiceImpl implements ArticleService {
 	public void updateArticle(ArticleVO vo) {
 		articleDAO.updateArticle(vo);
 	}
+	
+	@Override
+	public int getArticleNo() {
+		return articleDAO.getArticleNo();
+	}
 }

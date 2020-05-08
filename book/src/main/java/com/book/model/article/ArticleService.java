@@ -18,4 +18,5 @@ public interface ArticleService {
 
 	int countArticleList();
 
+	int getArticleNo();
 }

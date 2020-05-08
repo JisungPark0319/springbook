@@ -25,6 +25,7 @@ public class ArticleDAO {
 	private static final String ARTICLE_SELECT_LIST = "SELECT * FROM ARTICLE ORDER BY ARTICLE_NO DESC LIMIT ?,?";
 	private static final String ARTICLE_SELECT = "SELECT * FROM ARTICLE WHERE ARTICLE_NO = ?";
 	private static final String ARTICLE_GET_COUNT = "SELECT COUNT(*) FROM ARTICLE";
+	private static final String ARTICLE_GET_NO = "SELECT LAST_INSERT_ID() FROM ARTICLE LIMIT 0, 1";
 
 	public void insertArticle(ArticleVO vo) {
 		System.out.println("[ArticleDAO] ===> insertAritlce : " + vo);
@@ -62,6 +63,11 @@ public class ArticleDAO {
 	public int countArticleList() {
 		System.out.println("[ArticleDAO] ===> countArticleList");
 		return jdbcTemplate.queryForObject(ARTICLE_GET_COUNT, Integer.class);
+	}
+	
+	public int getArticleNo() {
+		System.out.println("[ArticleDAO] ===> getArticleNo");
+		return jdbcTemplate.queryForObject(ARTICLE_GET_NO, Integer.class);
 	}
 }
 
