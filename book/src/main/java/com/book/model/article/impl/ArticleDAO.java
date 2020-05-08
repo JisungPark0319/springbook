@@ -21,7 +21,7 @@ public class ArticleDAO {
 			+ "VALUES(?, ?, ?, ?, ?, 0)";
 	private static final String ARTICLE_UPDATE = "UPDATE ARTICLE SET TITLE = ?, MODDATE = NOW() WHERE ARTICLE_NO = ?";
 	private static final String ARTICLE_READCOUNT_UPDATE = "UPDATE ARTICLE SET READ_CNT = READ_CNT + 1 WHERE ARTICLE_NO = ?";
-	private static final String ARTICLE_DELETE = "DELETE ARTICLE WHERE ARTICLE_NO";
+	private static final String ARTICLE_DELETE = "DELETE FROM ARTICLE WHERE ARTICLE_NO";
 	private static final String ARTICLE_SELECT_LIST = "SELECT * FROM ARTICLE ORDER BY ARTICLE_NO DESC LIMIT ?,?";
 	private static final String ARTICLE_SELECT = "SELECT * FROM ARTICLE WHERE ARTICLE_NO = ?";
 	private static final String ARTICLE_GET_COUNT = "SELECT COUNT(*) FROM ARTICLE";

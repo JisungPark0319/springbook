@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.book.model.article.ArticlePage;
 import com.book.model.article.ArticleService;
 import com.book.model.article.ArticleVO;
 

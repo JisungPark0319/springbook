@@ -1,6 +1,8 @@
-package com.book.model.article;
+package com.book.view.article;
 
 import java.util.List;
+
+import com.book.model.article.ArticleVO;
 
 public class ArticlePage {
 	private int total;
