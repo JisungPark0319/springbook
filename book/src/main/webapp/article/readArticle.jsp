@@ -19,10 +19,12 @@
 		<tr>
 			<td>제목</td>
 			<td><c:out value="${articleData.article.title }"/></td>
+			<c:set var="title" value="${articleData.article.title }" scope="request" />
 		</tr>
 		<tr>
 			<td>내용</td>
 			<td><u:pre value="${articleData.content.content }" /></td>
+			<c:set var="content" value="${articleData.content.content }" scope="request" />
 		</tr>
 		<tr>
 			<td colspan="2">

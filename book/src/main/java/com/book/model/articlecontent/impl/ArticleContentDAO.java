@@ -17,7 +17,7 @@ public class ArticleContentDAO {
 	JdbcTemplate jdbcTemplate;
 	
 	private static final String CONTENT_INSERT = "INSERT INTO ARTICLE_CONTENT VALUES(?, ?)";
-	private static final String CONTENT_UPDATE = "UPDATE ARTICLE_CONTENT SET CONTENT = ? WHERE ARTILCE_NO = ?";
+	private static final String CONTENT_UPDATE = "UPDATE ARTICLE_CONTENT SET CONTENT = ? WHERE ARTICLE_NO = ?";
 	private static final String CONTENT_SELECT = "SELECT * FROM ARTICLE_CONTENT WHERE ARTICLE_NO = ?";
 	
 	public void insertContent(ArticleContentVO vo) {

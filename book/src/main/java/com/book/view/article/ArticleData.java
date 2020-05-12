@@ -23,4 +23,10 @@ public class ArticleData {
 		this.content = content;
 	}
 
+	@Override
+	public String toString() {
+		return "ArticleData [article=" + article + ", content=" + content + "]";
+	}
+	
+
 }
