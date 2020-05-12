@@ -25,5 +25,10 @@ public class ArticleContentImpl implements ArticleContentService {
 	public void updateContent(ArticleContentVO vo) {
 		contentDAO.updateContent(vo);
 	}
+	
+	@Override
+	public void deleteContent(ArticleContentVO vo) {
+		contentDAO.deleteContent(vo);
+	}
 
 }

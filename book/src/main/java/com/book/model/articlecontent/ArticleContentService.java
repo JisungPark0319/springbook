@@ -7,5 +7,7 @@ public interface ArticleContentService {
 	void updateContent(ArticleContentVO vo);
 
 	ArticleContentVO selectContent(ArticleContentVO vo);
+	
+	void deleteContent(ArticleContentVO vo);
 
 }

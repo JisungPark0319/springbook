@@ -19,6 +19,7 @@ public class ArticleContentDAO {
 	private static final String CONTENT_INSERT = "INSERT INTO ARTICLE_CONTENT VALUES(?, ?)";
 	private static final String CONTENT_UPDATE = "UPDATE ARTICLE_CONTENT SET CONTENT = ? WHERE ARTICLE_NO = ?";
 	private static final String CONTENT_SELECT = "SELECT * FROM ARTICLE_CONTENT WHERE ARTICLE_NO = ?";
+	private static final String CONTENT_DELETE = "DELETE FROM ARTICLE_CONTENT WHERE ARTICLE_NO = ?";
 	
 	public void insertContent(ArticleContentVO vo) {
 		jdbcTemplate.update(CONTENT_INSERT, vo.getNumber(), vo.getContent());
@@ -31,6 +32,10 @@ public class ArticleContentDAO {
 	public ArticleContentVO selectContent(ArticleContentVO vo) {
 		Object[] args = { vo.getNumber() };
 		return jdbcTemplate.queryForObject(CONTENT_SELECT, args, new ContentRowMapper());
+	}
+	
+	public void deleteContent(ArticleContentVO vo) {
+		jdbcTemplate.update(CONTENT_DELETE, vo.getNumber());
 	}
 }
 
