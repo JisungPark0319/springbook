@@ -24,7 +24,7 @@ public class ArticleListController {
 		if(pageNo == 0) {
 			pageNo = 1;
 		}
-		int total = articleService.countArticleList();
+		int total = articleService.selectCountArticleList();
 		List<ArticleVO> articleList = articleService.selectArticleList((pageNo-1)*size, size);
 		
 		ArticlePage articlePage = new ArticlePage(total, pageNo, size, articleList);

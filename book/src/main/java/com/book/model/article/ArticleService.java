@@ -16,7 +16,7 @@ public interface ArticleService {
 
 	ArticleVO selectArticle(ArticleVO vo);
 
-	int countArticleList();
+	int selectCountArticleList();
 
-	int getArticleNo();
+	int selectArticleNo();
 }

@@ -60,12 +60,12 @@ public class ArticleDAO {
 		return jdbcTemplate.queryForObject(ARTICLE_SELECT, args, new ArticleRowMapper());
 	}
 
-	public int countArticleList() {
+	public int selectCountArticleList() {
 		System.out.println("[ArticleDAO] ===> countArticleList");
 		return jdbcTemplate.queryForObject(ARTICLE_GET_COUNT, Integer.class);
 	}
 	
-	public int getArticleNo() {
+	public int selectArticleNo() {
 		System.out.println("[ArticleDAO] ===> getArticleNo");
 		return jdbcTemplate.queryForObject(ARTICLE_GET_NO, Integer.class);
 	}

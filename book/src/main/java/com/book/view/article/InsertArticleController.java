@@ -53,7 +53,7 @@ public class InsertArticleController {
 		vo.setRegDate(new Date());
 		vo.setModifiedDate(new Date());
 		articleService.insertArticle(vo);
-		content.setNumber(articleService.getArticleNo());
+		content.setNumber(articleService.selectArticleNo());
 		contentService.insertContent(content);
 		
 		return "newArticleSuccess.jsp";

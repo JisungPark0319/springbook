@@ -14,8 +14,8 @@ public class ArticleServiceImpl implements ArticleService {
 	ArticleDAO articleDAO;
 
 	@Override
-	public int countArticleList() {
-		return articleDAO.countArticleList();
+	public int selectCountArticleList() {
+		return articleDAO.selectCountArticleList();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 	
 	@Override
-	public int getArticleNo() {
-		return articleDAO.getArticleNo();
+	public int selectArticleNo() {
+		return articleDAO.selectArticleNo();
 	}
 }

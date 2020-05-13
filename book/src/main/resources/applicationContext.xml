@@ -16,8 +16,12 @@
 	
 	<context:component-scan base-package="com.book.model"></context:component-scan>
 	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<!-- Database 정보 파일 위치 지정 -->
 	<context:property-placeholder location="classpath:config/database.properties" />
 	
+	<!-- Data Soucre 설정 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driver}"></property>
 		<property name="url" value="${jdbc.url}"></property>
@@ -25,7 +29,25 @@
 		<property name="password" value="${jdbc.password}"></property>
 	</bean>
 	
+	<!-- Jdbc template 설정 -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	
+	<!-- Transaction 설정 -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="select*" read-only="true"/>
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut id="txPointcut" expression="execution(* com.book.model..*Impl.*(..))" />
+		<aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice"/>
+	</aop:config>
 </beans>
